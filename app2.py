@@ -1,4 +1,23 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
+import joblib
+import gdown
+
+# Google Drive file ID (from your link)
+# Original link: https://drive.google.com/file/d/1Kd7cGy-kJrICWkGPWWgEedny5Ujl5xF7/view?usp=sharing
+file_id = "1Kd7cGy-kJrICWkGPWWgEedny5Ujl5xF7"
+url = f"https://drive.google.com/uc?id={file_id}"
+
+# Download model only if not already exists
+model_path = "car_price_model.pkl"
+try:
+    gdown.download(url, model_path, quiet=False)
+    model = joblib.load(model_path)
+except Exception as e:
+    st.error(f"❌ Error loading model: {e}")
+
+import streamlit as st
 import numpy as np
 import pickle
 
