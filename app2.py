@@ -17,7 +17,9 @@ st.write("Enter the details below to estimate the car's selling price.")
 yr_mfr = st.number_input("Year of Manufacture", min_value=1990, max_value=2025, value=2018)
 fuel_type = st.selectbox("Fuel Type", ["Petrol", "Diesel", "CNG", "Electric", "Hybrid"])
 kms_run = st.number_input("Kilometers Driven", min_value=0, max_value=500000, value=50000)
-city = st.text_input("City", "Delhi")
+city = st.text_input("City", ["Noida", "Gurgaon", "Bengaluru", "New Delhi", "Mumbai", "Pune",
+    "Hyderabad", "Chennai", "Kolkata", "Ahmedabad", "Faridabad",
+    "Ghaziabad", "Lucknow"] )
 body_type = st.selectbox("Body Type", ["Hatchback", "Sedan", "SUV", "MUV", "Coupe", "Convertible"])
 transmission = st.selectbox("Transmission Type", ["Manual", "Automatic"])
 model_name = st.text_input("Model Name", "Swift")
