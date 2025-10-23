@@ -4,7 +4,7 @@ import pickle
 
 # Load the trained model
 try:
-    with open("car_price_model.pkl", "rb") as file:
+    with open("MODEL_PATH = 'rf_model.pkl'", "rb") as file:
         model = pickle.load(file)
     st.success("✅ Model loaded successfully!")
 except Exception as e:
