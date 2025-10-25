@@ -72,3 +72,22 @@ if st.button("🔍 Predict Price"):
         st.success(f"💰 Estimated Selling Price: ₹{round(prediction, 2)} Lakhs")
     except Exception as e:
         st.error(f"❌ Prediction failed: {e}")
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import joblib
+import gdown
+
+# Google Drive file ID (from your link)
+file_id = "1Kd7cGy-kJrICWkGPW9Egndy5UjI5xF7"
+url = f"https://drive.google.com/uc?id={file_id}"
+
+# Download model only if not already exists
+model_path = "car_price_model.pkl"
+try:
+    gdown.download(url, model_path, quiet=False)
+    model = joblib.load(model_path)
+except Exception as e:
+    st.error(f"❌ Error loading model: {e}")
+
